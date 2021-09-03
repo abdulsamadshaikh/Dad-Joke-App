@@ -1,0 +1,178 @@
+/*  
+Project Name: Dad Jokes Application Using Fetch API
+Description: This is a Dad Jokes Application Using Fetch API, You will get a new joke on each refresh/click. I have written two Different methods to call API requests, You can use whichever you like. I would love to see your feedback and suggestions. Give me a thumbs-up, If you like it. Enjoy!
+Author: Abdul Samad
+Author URI: https://getabdulsamad.com/
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Barlow', sans-serif;
+  background: linear-gradient(to right, rgb(44, 62, 80), rgb(52, 152, 219));
+  color: #2f2b36;
+  margin: 0;
+  height: 100vh;
+  letter-spacing: 0.3px;
+}
+
+.container {
+  -webkit-display: flex;
+  -moz-display: flex;
+  display: flex;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column;
+  height: 100vh;
+  width: 1280px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.project-title h1 {
+  color: #fff;
+  font-size: 34px;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 40px;
+  -webkit-text-shadow: 0 1px 3px rgb(51, 51, 24), 0 1px 2px rgb(51, 51, 54);
+  -moz-text-shadow: 0 1px 3px rgb(51, 51, 24), 0 1px 2px rgb(51, 51, 54);
+  text-shadow: 0 1px 3px rgb(51, 51, 24), 0 1px 2px rgb(51, 51, 54);
+}
+
+#jokeCard {
+  max-width: 100%;
+  width: 800px;
+  background-color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  padding: 40px;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+#jokeCard h3 {
+  margin-top: 0;
+  font-weight: 600;
+  font-size: 20px;
+  opacity: 0.3;
+}
+
+#joke {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 38px;
+  margin: 40px 0;
+}
+
+#jokeBtn {
+  border: 0;
+  background-color: rgb(52, 152, 219);
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: inherit;
+  text-transform: uppercase;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: background 0.3s;
+  -moz-transition: background 0.3s;
+  transition: background 0.3s;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+#jokeBtn:hover {
+  background-color: rgb(44, 62, 80);
+}
+
+#jokeBtn:active {
+  outline: none;
+  -webkit-transform: scale(0.98);
+  -moz-transform: scale(0.98);
+  transform: scale(0.98);
+}
+
+#jokeBtn:focus {
+  outline: none;
+}
+
+.spinner {
+  text-align: center;
+}
+
+.spinner > div {
+  width: 18px;
+  height: 18px;
+  background-color: #333;
+  opacity: 0.6;
+  margin: 40px 0;
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%,
+  80%,
+  100% {
+    -webkit-transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes sk-bouncedelay {
+  0%,
+  80%,
+  100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .project-title h1 {
+    font-size: 28px;
+  }
+  #jokeCard {
+    padding: 40px 20px;
+  }
+  #joke {
+    font-size: 24px;
+    line-height: 34px;
+  }
+}
